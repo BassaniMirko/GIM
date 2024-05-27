@@ -25,6 +25,6 @@ Corso di Grafica in Movimento - SUPSI
 
 [neve](https://BassaniMirko.github.io/GIM//Esercizio_3B/neve.html)
 
-[pioggia](https://BassaniMirko.github.io/GIM//Esercizio_3B/pioggia.html)
+[pioggia](https://BassaniMirko.github.io/GIM//Esercizio_3B/pioggia/index.html)
 
 [pong](https://BassaniMirko.github.io/GIM//Esercizio_3B/pong.html)
