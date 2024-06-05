@@ -6,7 +6,7 @@ const centerY = radius; // Posizione Y del centro del cerchio nero
 const secondsRadius = radius - 20; // Raggio della lancetta dei secondi
 const minutesLength = radius - 40; // Lunghezza della lancetta dei minuti
 const totalHours = 12; // Numero totale di ore nel ciclo
-const secondsSpeed = 6; // Velocità dei secondi (gradi al secondo)
+const secondsSpeed = 2 * Math.PI / 60; // Velocità dei secondi (radianti al secondo)
 
 // Creazione del canvas
 const canvas = document.createElement('canvas');
@@ -23,7 +23,7 @@ const ctx = canvas.getContext('2d');
 function drawBlackCircle() {
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'red';
     ctx.fill();
     ctx.closePath();
 }
@@ -62,7 +62,7 @@ function drawSeconds(seconds) {
     const y = centerY + secondsRadius * Math.sin(angle);
     ctx.beginPath();
     ctx.arc(x, y, 6, 0, 2 * Math.PI);
-    ctx.fillStyle = 'black'; // Colore del pallino dei secondi
+    ctx.fillStyle = 'green'; // Colore del pallino dei secondi
     ctx.fill();
     ctx.closePath();
 }
@@ -78,6 +78,18 @@ function updateClock() {
     drawHours(hours);
     drawSeconds(seconds);
 }
+   
+// Calcolo dei giorni rimanenti nel mese
+const oggi = new Date();
+const fineMese = new Date(oggi.getFullYear(), oggi.getMonth() + 1, 0);
+const giorniRimanentiMese = fineMese.getDate() - oggi.getDate();
+
+// Calcolo dei giorni rimanenti nell'anno
+const fineAnno = new Date(oggi.getFullYear() + 1, 0, 0);
+const giorniRimanentiAnno = Math.ceil((fineAnno - oggi) / (1000 * 60 * 60 * 24));
+
+console.log('Giorni rimanenti nel mese: ' + giorniRimanentiMese);
+console.log('Giorni rimanenti nell\'anno: ' + giorniRimanentiAnno);
 
 // Aggiornamento iniziale dell'orologio
 updateClock();
@@ -92,7 +104,6 @@ function animateSeconds() {
     const y = centerY + secondsRadius * Math.sin(angle);
     ctx.clearRect(0, 0, diameter, diameter);
     drawBlackCircle();
-    drawMinutes(now.getMinutes());
     drawHours(now.getHours());
     drawSeconds(seconds);
     requestAnimationFrame(animateSeconds);

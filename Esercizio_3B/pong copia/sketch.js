@@ -69,6 +69,10 @@ function setup() {
 function draw() {
     background(51);
 
+    // Aggiorna la posizione della palla
+    ball.x = mouseX;
+    ball.y = mouseY;
+
     // Muovi i cerchi quando la palla passa sulla parola 'Pong'
     for (var i = 0; i < vehicles.length; i++) {
         var v = vehicles[i];
