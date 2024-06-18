@@ -1,18 +1,6 @@
-# Esercizio 1C
-Lettura
+# *Analisi testo*
 
-## Brief
-Leggere il testo di Kleist e scrivere un commento e publiccarlo nel file README.md.
-
-## Restrizioni
-- 500-1000 caratteri
-
-## Consegna
-Pubblicare il commento sulla piattaforma GitHub nel file README.md.
-
-## Struttura cartella
-```
-GIM/esercizio_1C
-	README.md
-``` 
-
+##### Heinrich von Kleist, nel suo saggio "Sul Teatro di Marionette", esplora la bellezza e la fluidità dei movimenti umani, mettendo in discussione le nostre convinzioni culturali radicate. Egli suggerisce che la vera perfezione non proviene dalla razionalità e dal controllo, ma nasce spontaneamente dalla nostra natura più autentica. Kleist ribalta l'idea comune che il perfezionamento attraverso la riflessione sia possibile, mostrando come il nostro continuo sforzo per raggiungere la perfezione possa spesso portare a errori e insoddisfazioni.
+##### Nel racconto, le marionette rappresentano una forma ideale di grazia, priva di coscienza e quindi immune agli errori umani. A differenza degli esseri umani, che agiscono influenzati dai pensieri e dalle emozioni, le marionette si muovono con una precisione meccanica che Kleist contrappone all'inevitabile imperfezione umana.
+##### Attraverso la storia del giovane che perde la sua grazia naturale una volta presa coscienza di essa, Kleist riflette sul tema antico della conoscenza e dell'innocenza perduta. Egli suggerisce che la vera grazia può essere raggiunta solo in uno stato di pura spontaneità o in un'armonia divina, indicando così che il cammino verso la perfezione potrebbe richiedere un abbandono delle nostre continue riflessioni razionali.
+##### In sintesi, Kleist ci invita a riconsiderare il valore della spontaneità e dell'innocenza nella nostra ricerca di realizzazione personale, sfidando le concezioni culturali prevalenti e offrendo una riflessione profonda sulla vera natura della grazia e dell'armonia umana.
