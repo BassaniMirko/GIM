@@ -25,6 +25,9 @@ Corso di Grafica in Movimento - SUPSI
 
 [dittico](https://BassaniMirko.github.io/GIM/Esercizio_1B/template/index.html)
 
+### Esercizio 2
+
+[parola](https://BassaniMirko.github.io/GIM/Esercizio_2/template/Liberty.html)
 
 ### Esercizio 3a
 
