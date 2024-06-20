@@ -22,21 +22,21 @@ Corso di Grafica in Movimento - SUPSI
 
 
 ### Esercizio 1b
-
 [dittico](https://BassaniMirko.github.io/GIM/Esercizio_1B/template/indexA.html)
 
-### Esercizio 2
+### Esercizio 1c
 
+[Analisi](https://BassaniMirko.github.io/GIM/Esercizio_1C)
+
+### Esercizio 2
 [parola](https://BassaniMirko.github.io/GIM/Esercizio_2/template/Liberty.html)
 
 ### Esercizio 3a
-
 [orologio](https://BassaniMirko.github.io/GIM//Esercizio_3A/orologio/index.html)
 
 
 
 ### Esercizio 3b
-
 [neve](https://BassaniMirko.github.io/GIM//Esercizio_3B/neve/index.html)
 
 [pioggia](https://BassaniMirko.github.io/GIM//Esercizio_3B/pioggia/index.html)
