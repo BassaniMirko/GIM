@@ -23,11 +23,12 @@ Corso di Grafica in Movimento - SUPSI
 
 ### Esercizio 1b
 
-[dittico](https://BassaniMirko.github.io/GIM/Esercizio_1B/template/indexA.html)
+[dittico](https://BassaniMirko.github.io/GIM/Esercizio_1B/template/index.html)
+
 
 ### Esercizio 3a
 
-[Tempo_perso](https://BassaniMirko.github.io/GIM//Esercizio_3A/tempo_perso/index.html)
+[Tempo_perso](https://BassaniMirko.github.io/GIM/Esercizio_3A/tempo_perso/index.html)
 
 ### Esercizio 3b
 
