@@ -21,6 +21,10 @@ Corso di Grafica in Movimento - SUPSI
 [rotazione 3](https://BassaniMirko.github.io/GIM//Esercizio_1A/template/rotazione_3.html)
 
 
+### Esercizio 1b
+
+[dittico](https://BassaniMirko.github.io/GIM/Esercizio_1B/template/indexA.html)
+
 ### Esercizio 3b
 
 [neve](https://BassaniMirko.github.io/GIM//Esercizio_3B/neve/index.html)
