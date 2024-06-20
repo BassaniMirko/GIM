@@ -5,34 +5,54 @@
 	<meta name="author" content="Nome Cognome" />
 	<title>Rotazione 2</title>
 	<style type="text/css">
-		html{
-			height:100%;
+		html {
+			height: 100%;
 		}
-		body{
+		body {
 			background-color: rgb(235,235,235);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			margin: 0;
 		}
-		canvas{
-			position:absolute;
-			left:50%;
-			top:50%;
-			margin-left: -200px;
-			margin-top: -200px;
+		canvas {
+			width: 400px;
+			height: 400px;
+			background-color: white; /* Optional: to see the canvas border */
 		}
 	</style>
 </head>
 <body>
+	<canvas width="400" height="400"></canvas>
 	<script type="module">
-
 		import Sequencer from './js/sequencer.min.js';
 
-		Sequencer.make({
-			canvas       	 : document.querySelector("canvas"),
-			from         	 : "img/rotazione_2/1.jpg",
-			to           	 : "img/rotazione_2/2.jpg",
-			playMode     	 : "auto",
-			loop         	 : "loop", // "pong"
-			interval     	 : 300,
-		})
+		const canvas = document.querySelector("canvas");
+		const context = canvas.getContext("2d");
+
+		const image1 = new Image();
+		const image2 = new Image();
+
+		image1.src = "img/rotazione_2/1.jpg";
+		image2.src = "img/rotazione_2/2.jpg";
+
+		let images = [image1, image2];
+		let currentImageIndex = 0;
+
+		image1.onload = function() {
+			// Draw the first image once loaded
+			context.drawImage(image1, 0, 0, canvas.width, canvas.height);
+		};
+
+		function drawImage() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.drawImage(images[currentImageIndex], 0, 0, canvas.width, canvas.height);
+			currentImageIndex = (currentImageIndex + 1) % images.length;
+		}
+
+		// Set interval to change images
+		setInterval(drawImage, 300);
 	</script>
 </body>
 </html>
