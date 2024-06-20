@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Time You're Wasting</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/tt-commons" rel="stylesheet">
+                
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/tt-commons');
+
+    body {
+      background-color: rgb(20, 20, 20);
+      font-family: 'TT Commons', sans-serif;
+      margin: 0;
+      overflow: hidden; /* Per disabilitare la barra di scorrimento */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(20, 20, 20);
+      pointer-events: none; /* Per evitare che il testo interferisca con il click del mouse */
+      display: none; /* Inizialmente nascosto */
+    }
+  </style>
+</head>
+<body>
+  <div class="message" id="message">
+    YOU'RE LOSING TIME!
+  </div>
+
+  <script>
+    let engine;
+    let world;
+    let ground;
+    let polygons = [];
+    let str_n = 0;
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+
+      engine = Matter.Engine.create();
+      world = engine.world;
+      engine.world.gravity.scale = 0.001; // Riduzione della scala della gravità
+
+      let groundOptions = {
+        isStatic: true,
+      };
+      ground = Matter.Bodies.rectangle(
+        width / 2,
+        height - 10,
+        width,
+        20,
+        groundOptions
+      );
+      Matter.World.add(world, ground);
+    }
+
+    function draw() {
+      background(20);
+
+      if (frameCount % 60 == 0) {
+        let radius = random(20, 50);
+        let angle = (random(TWO_PI) / 180) * (random() > 0.5 ? -1 : 1);
+        let options = {
+          restitution: 0.1,
+        };
+        let polygon = Matter.Bodies.circle(width / 2, 50, radius, options);
+        polygon.angle = angle;
+        polygon.string = getTimeString();
+        polygon.radius = radius;
+
+        Matter.World.add(world, polygon);
+        polygons.push(polygon);
+      }
+
+      Matter.Engine.update(engine);
+
+      fill(20);
+      noStroke();
+      rectMode(CENTER);
+      rect(ground.position.x, ground.position.y, width, 20);
+
+      for (let i = polygons.length - 1; i >= 0; i--) {
+        let polygon = polygons[i];
+
+        push();
+        translate(polygon.position.x, polygon.position.y);
+        rotate(polygon.angle);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        noStroke();
+        textSize(polygon.radius * 2);
+        text(polygon.string, 0, 0);
+        pop();
+
+        if (polygon.position.y > height + 100) {
+          Matter.World.remove(world, polygon);
+          polygons.splice(i, 1);
+        }
+      }
+    }
+
+    function mousePressed() {
+      let message = document.getElementById('message');
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 2000); // Nasconde il messaggio dopo 2 secondi
+    }
+
+    function getTimeString() {
+      let d = new Date();
+      let h = nf(d.getHours(), 2);
+      let m = nf(d.getMinutes(), 2);
+      let s = nf(d.getSeconds(), 2);
+      return `${h}:${m}:${s}`;
+    }
+  </script>
+</body>
+</html>
