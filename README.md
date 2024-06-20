@@ -31,7 +31,9 @@ Corso di Grafica in Movimento - SUPSI
 
 ### Esercizio 3a
 
-[orologio](https://BassaniMirko.github.io/GIM/Esercizio_3A/orologio/index.html)
+[orologio](https://BassaniMirko.github.io/GIM//Esercizio_3A/orologio/index.html)
+
+
 
 ### Esercizio 3b
 
